@@ -11,7 +11,7 @@ o.h.engine.jdbc.spi.SqlExceptionHelper   : Column "D1_0.DEPARTMENTCODE" not foun
 select c1_0.id,d1_0.company_id,d1_0.department_code,d1_0.name,c1_0.name from company c1_0 left join department d1_0 on c1_0.id=d1_0.company_id where c1_0.name=? order by d1_0.departmentCode desc [42122-214]
 ```
 
-Basically, under certain conditions the column name provided in the `OrderBy` annotation is not transformed to the physical name of the column in the databse.
+Basically, under certain conditions the column name provided in the `OrderBy` annotation is not transformed to the physical name of the column in the database.
 
 This is a combination of the three different conditions:
 1) The field used in the `OrderBy` should be a part of a composite key on the mapped entity. In our case this is `DepartmentId` composite key:
